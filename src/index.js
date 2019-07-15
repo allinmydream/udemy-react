@@ -1,54 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CommentDetail from './CommentDetail';
 import faker from 'faker';
 
 const App = () => {
+    const profileImg = faker.image.avatar();
     return (
         <div className="ui container comments">
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={ faker.image.avatar() } />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Jade
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6:00PM</span>
-                    </div>
-                    <div className="text">Nice blog post!</div>
-                </div>
-            </div>
-
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={ faker.image.avatar() } />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Jade
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6:00PM</span>
-                    </div>
-                    <div className="text">Nice blog post!</div>
-                </div>
-            </div>
-
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={ faker.image.avatar() } />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Jade
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6:00PM</span>
-                    </div>
-                    <div className="text">Nice blog post!</div>
-                </div>
-            </div>
+            <CommentDetail author="judy" timeAgo="Today at 3:00PM" content="Good work" profileImg={profileImg} />
+            <CommentDetail author="noah" timeAgo="Today at 11:35AM" content="nice try!!" profileImg={profileImg} />
+            <CommentDetail author="sam" timeAgo="Yesterday at 10:05PM" content="Can I ask a question?" profileImg={profileImg} />
         </div>
     )
 }
